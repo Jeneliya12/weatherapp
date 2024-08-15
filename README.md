@@ -29,7 +29,7 @@ A React application for viewing weather information. This project displays curre
 
 - **cd WEATHER_APP**
 - **npm install**
-- **Note**: Install the tailwind from the official website:[Link Text](https://tailwindcss.com/docs/guides/create-react-app)
+- **Note**: Install the tailwind from the official website:[tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 
 ### Create a '.env' File
 
