@@ -2,8 +2,8 @@ import React, { createContext, useState, useEffect } from "react";
 import {
   fetchWeatherDataByQuery,
   fetchWeatherDataByLocation,
-} from "../api/weatherapi"; // Corrected import path
-import { processWeatherData } from "../util/weatherutil"; // Corrected import path
+} from "../api/weatherapi";
+import { processWeatherData } from "../util/weatherutil";
 
 const WeatherContext = createContext();
 

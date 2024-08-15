@@ -4,7 +4,7 @@ function CurrentWeather({ data }) {
     : `https:${data.icon}`;
 
   return (
-    <div className="bg-blue-50 shadow-lg rounded-lg p-6 mt-8 relative z-30 max-w-md mx-auto border">
+    <div className="bg-blue-50 shadow-lg rounded-lg p-10 mt-16 relative z-30 max-w-md mx-auto border">
       <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
         {data.location}
       </h2>
