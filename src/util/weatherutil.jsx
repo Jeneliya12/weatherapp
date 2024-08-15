@@ -1,3 +1,6 @@
+export const convertToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+export const convertToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+
 export const formatTime = (time24) => {
   const [hour, minute] = time24.split(":").map(Number);
   const period = hour >= 12 ? "PM" : "AM";

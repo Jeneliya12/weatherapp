@@ -14,6 +14,7 @@ export const WeatherProvider = ({ children }) => {
   const [query, setQuery] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [unit, setUnit] = useState("Celsius");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +42,10 @@ export const WeatherProvider = ({ children }) => {
     setQuery(searchQuery.query);
   };
 
+  const toggleUnit = () => {
+    setUnit((prevUnit) => (prevUnit === "Celsius" ? "Fahrenheit" : "Celsius"));
+  };
+
   const contextValue = {
     weatherData,
     hourlyData,
@@ -48,6 +53,8 @@ export const WeatherProvider = ({ children }) => {
     loading,
     error,
     handleSearch,
+    unit,
+    toggleUnit,
   };
 
   return (
