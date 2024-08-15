@@ -6,10 +6,19 @@ function WeatherEffect({ condition }) {
       return "rainy-effect";
     }
     if (
+      condition?.toLowerCase().includes("thunderstorm") ||
+      condition?.toLowerCase().includes("storm")
+    ) {
+      return "thunderstorm-effect";
+    }
+    if (
       condition?.toLowerCase().includes("sunny") ||
       condition?.toLowerCase().includes("clear")
     ) {
       return "sunny-effect";
+    }
+    if (condition?.toLowerCase().includes("cloud")) {
+      return "cloudy-effect";
     }
     return "";
   };

@@ -7,24 +7,30 @@ function CurrentWeather({ data }) {
     : `https:${data.icon}`;
 
   return (
-    <div className="shadow-xl bg-blue-50 rounded-lg p-12 mt-12 flex flex-col items-center space-y-8 relative z-30 custom-width mx-auto">
-      <h2 className="text-4xl font-bold items-center text-black">
+    <div className="bg-white shadow-lg rounded-lg p-6 mt-8 relative z-30 max-w-md mx-auto border border-gray-200">
+      <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
         {data.location}
       </h2>
-      <div className="flex items-center text-5xl font-semibold text-black">
+      <div className="flex flex-col items-center text-center mb-6">
         <img
           src={iconUrl} // Use dynamic icon URL
-          className="w-16 h-16"
+          className="w-24 h-24 mb-3" // Larger icon for better visibility
           alt={data.condition}
         />
-        <h1 className="text-6xl text-black">{data.temperature}°C</h1>
+        <h1 className="text-6xl font-bold text-gray-800 mb-1">
+          {data.temperature}°C
+        </h1>
+        <p className="text-lg font-medium text-gray-600">{data.condition}</p>
       </div>
-      <div className="flex items-center space-x-4">
-        <p className="text-2xl text-black">{data.condition}</p>
-      </div>
-      <div className="flex items-center space-x-4">
-        <p className="text-xl text-black">H: {data.humidity}%</p>
-        <p className="text-xl text-black">W: {data.wind} km/h</p>
+      <div className="flex justify-around text-gray-600 mt-4">
+        <div className="text-center">
+          <p className="text-sm font-medium">Humidity</p>
+          <p className="text-lg font-semibold">{data.humidity}%</p>
+        </div>
+        <div className="text-center">
+          <p className="text-sm font-medium">Wind</p>
+          <p className="text-lg font-semibold">{data.wind} km/h</p>
+        </div>
       </div>
     </div>
   );

@@ -69,19 +69,36 @@ function Mainsection() {
 
   const fetchWeatherDataByQuery = async (query) => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}`;
+    const currentUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}`;
+    const hourlyUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${query}&hours=24`;
+    const weeklyUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${query}&days=7`;
 
     try {
-      const response = await fetch(url);
-      if (!response.ok)
-        throw new Error(`Error fetching weather data: ${response.statusText}`);
-      const data = await response.json();
+      const [currentResponse, hourlyResponse, weeklyResponse] =
+        await Promise.all([
+          fetch(currentUrl),
+          fetch(hourlyUrl),
+          fetch(weeklyUrl),
+        ]);
 
-      return {
-        current: data,
-        hourly: { forecast: { forecastday: [] } },
-        weekly: { forecast: { forecastday: [] } },
-      };
+      if (!currentResponse.ok)
+        throw new Error(
+          `Error fetching current weather: ${currentResponse.statusText}`
+        );
+      if (!hourlyResponse.ok)
+        throw new Error(
+          `Error fetching hourly forecast: ${hourlyResponse.statusText}`
+        );
+      if (!weeklyResponse.ok)
+        throw new Error(
+          `Error fetching weekly forecast: ${weeklyResponse.statusText}`
+        );
+
+      const currentData = await currentResponse.json();
+      const hourlyData = await hourlyResponse.json();
+      const weeklyData = await weeklyResponse.json();
+
+      return { current: currentData, hourly: hourlyData, weekly: weeklyData };
     } catch (error) {
       console.error("Error fetching weather data:", error);
       throw error;
