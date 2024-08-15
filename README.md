@@ -88,6 +88,7 @@ API Key: Ensure to replace your_weather_api_key in the .env file with your actua
 
 Screenshots:
 Weather details based on User's Location 
-![ead-back](https://github.com/user-attachments/assets/10f11907-06e4-443a-b8d2-f83263d59c80)
+![Screenshot 2024-08-15 at 15 12 52](https://github.com/user-attachments/assets/9cf50906-f9b8-46e5-b8e2-65e036511e7c)
+
 
 
