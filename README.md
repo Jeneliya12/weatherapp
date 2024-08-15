@@ -59,17 +59,17 @@ A React application for viewing weather information. This project displays curre
 
 - **Current Weather**: https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=QUERY
 
-For e.g:
-q = “New York”
-API_KEY: Your Api Key
+  - **For e.g**:
+  - **q = “New York**” -**API_KEY: Your Api Key**
 
 - **Hourly Forecast**: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&hours=24
-  q = “New York”
-  API_KEY: Your Api Key
+
+  - **q = “New York”**
+  - **API_KEY: Your Api Key**
 
 - **Weekly Forecast**: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&days=7
-  q = “New York”
-  API_KEY: Your Api Key
+  - **q = “New York”**
+  - **API_KEY: Your Api Key**
 
 ## Functions:
 
