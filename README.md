@@ -103,7 +103,8 @@ Weekly Forecast:
 ![Screenshot 2024-08-15 at 15 30 16](https://github.com/user-attachments/assets/666c3529-42ef-4a57-ac31-35b394bc87b4)
 
 Temperature Conversion From Celsius to Fahrenheit
-![Screenshot 2024-08-15 at 15 12 52](https://github.com/user-attachments/assets/a60c62fc-3428-43d0-bb3e-2dc2c3a54a54)
+![Screenshot 2024-08-15 at 15 35 55](https://github.com/user-attachments/assets/56b0a777-e3e3-4ff2-8467-5d1e4724b3f7)
+
 
 
 
