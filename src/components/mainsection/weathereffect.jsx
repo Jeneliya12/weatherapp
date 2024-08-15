@@ -3,7 +3,7 @@ const effectClasses = {
   thunderstorm: "thunderstorm-effect",
   storm: "thunderstorm-effect",
   sunny: "sunny-effect",
-  clear: "sunny-effect",
+  clear: "clear-effect",
   cloud: "cloudy-effect",
 };
 
