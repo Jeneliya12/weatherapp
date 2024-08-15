@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import SearchBar from "../searchbar";
+import SearchBar from "../header/searchbar";
 import WeatherEffect from "./weathereffect";
 import CurrentWeather from "./currentweather";
 import HourlyForecast from "./hourlyforecast";
 import WeeklyForecast from "./weeklyforecast";
-import WeatherContext from "./weathercontext";
+import WeatherContext from "../context/weathercontext";
 
 function Mainsection() {
   const { weatherData, hourlyData, weeklyData, loading, error, handleSearch } =

@@ -1,6 +1,6 @@
 import React from "react";
 import Mainsection from "../components/mainsection/mainsection";
-import { WeatherProvider } from "../components/mainsection/weathercontext";
+import { WeatherProvider } from "../components/context/weathercontext";
 
 function Home() {
   return (

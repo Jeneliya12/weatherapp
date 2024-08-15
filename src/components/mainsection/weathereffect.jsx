@@ -1,5 +1,3 @@
-import React from "react";
-
 function WeatherEffect({ condition }) {
   const getEffectClass = () => {
     if (condition?.toLowerCase().includes("rain")) {

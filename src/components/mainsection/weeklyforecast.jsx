@@ -1,5 +1,3 @@
-import React from "react";
-
 function WeeklyForecast({ data }) {
   return (
     <div className="bg-blue-50 shadow-lg rounded-lg p-6 mt-8 relative z-30">

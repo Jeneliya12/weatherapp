@@ -1,7 +1,4 @@
-import React from "react";
-
 function CurrentWeather({ data }) {
-  // Correctly construct the full URL for the weather icon
   const iconUrl = data.icon.startsWith("http")
     ? data.icon
     : `https:${data.icon}`;
@@ -12,11 +9,7 @@ function CurrentWeather({ data }) {
         {data.location}
       </h2>
       <div className="flex flex-col items-center text-center mb-6">
-        <img
-          src={iconUrl} // Use dynamic icon URL
-          className="w-24 h-24 mb-3" // Larger icon for better visibility
-          alt={data.condition}
-        />
+        <img src={iconUrl} className="w-24 h-24 mb-3" alt={data.condition} />
         <h1 className="text-6xl font-bold text-gray-800 mb-1">
           {data.temperature}°C
         </h1>

@@ -1,5 +1,3 @@
-import React from "react";
-
 const HourlyForecast = ({ data }) => {
   return (
     <div className="bg-blue-50 shadow-lg rounded-lg p-6 mt-4 relative z-30">
