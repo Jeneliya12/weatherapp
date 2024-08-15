@@ -88,24 +88,24 @@ API_KEY: Your Api Key
 
 - **Weather details based on User's Location when the weathereffect = "Partly Cloudy"**
 
-![Screenshot of partly cloudy](assets/images/partlycloudy.png)
+![Screenshot of partly cloudy](public/assets/images/partlycloudy.png)
 
 - **Weather details based on User's preferred City when the weathereffect = "Sunny"**
 
-![Screenshot of sunny](assets/images/sunny.png)
+![Screenshot of sunny](pubic/assets/images/sunny.png)
 
 - **Weather details based on User's preferred City when the weathereffect = "Rainy"**
 
-![Screenshot of rainy cloudy](assets/images/rainy.png)
+![Screenshot of rainy cloudy](public/assets/images/rainy.png)
 
 - **Hourly Forecast**:
 
-![Screenshot of hourly](assets/images/hourlyforecast.png)
+![Screenshot of hourly](public/assets/images/hourlyforecast.png)
 
 - **Weekly Forecast**:
 
-![Screenshot of weekly](assets/images/weeklyforecast.png)
+![Screenshot of weekly](public/assets/images/weeklyforecast.png)
 
 - **Temperature Conversion From Celsius to Fahrenheit**
 
-![Screenshot of weekly](assets/images/ctof.png)
+![Screenshot of weekly](public/assets/images/ctof.png)
