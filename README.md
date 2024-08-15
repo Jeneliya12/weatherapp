@@ -85,3 +85,9 @@ fetchWeatherDataByLocation(): Fetches weather data based on the user's current l
 Customization
 Styles: Modify Tailwind CSS classes to fit your design preferences.
 API Key: Ensure to replace your_weather_api_key in the .env file with your actual API key from WeatherAPI.
+
+Screenshots:
+Weather details based on User's Location 
+![ead-back](https://github.com/user-attachments/assets/10f11907-06e4-443a-b8d2-f83263d59c80)
+
+
