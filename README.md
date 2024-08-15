@@ -19,96 +19,93 @@ A React application for viewing weather information. This project displays curre
 
 ## Installation
 
-To set up the project locally, follow these steps:
+- **To set up the project locally, follow these steps:**
 
 ### Clone the Repository
 
-git clone https://github.com/Jeneliya12/weatherapp.git
+- **git clone https://github.com/Jeneliya12/weatherapp.git**
 
 ### Install Dependencies
 
-cd WEATHER_APP
-npm install
+- **cd WEATHER_APP**
+- **npm install**
+- **install tailwind with react**
 
 ### Create a '.env' File
 
-VITE_WEATHER_API_KEY=your_weather_api_key
+- **VITE_WEATHER_API_KEY=your_weather_api_key**
 
 ### Start the Development Server
 
-npm run dev
+- **npm run dev**
 
 ## Components
 
-#### mainsection:
+- **mainsection**:Manages the layout of the page, including CurrentWeather, HourlyForecast, and WeeklyForecast components.
 
-Manages the layout of the page, including CurrentWeather, HourlyForecast, and WeeklyForecast components.
+- **currentweather**:Displays current weather data and allows toggling between Celsius and Fahrenheit.
 
-#### currentweather:
+- **hourlyforecast**:Shows a horizontal scrollable list of hourly forecasts for the next 24 hours.
 
-Displays current weather data and allows toggling between Celsius and Fahrenheit.
+- **weeklyforecast**:Displays a 7-day forecast with daily weather information.
 
-#### hourlyforecast:
+- **weathereffect**:Provides visual effects based on current weather conditions.
 
-Shows a horizontal scrollable list of hourly forecasts for the next 24 hours.
+## Context
 
-### weeklyforecast:
+- **WeatherContext**: Manages global state for weather data, loading state, error handling, unit of measurement, and search functionality.
 
-Displays a 7-day forecast with daily weather information.
+## API Integration
 
-### WeatherEffect: Provides visual effects based on current weather conditions.
-
-Context
-
-WeatherContext: Manages global state for weather data, loading state, error handling, unit of measurement, and search functionality.
-
-API Integration
-
-API Endpoints:
-
-Current Weather: https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=QUERY
+- **Current Weather**: https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=QUERY
 
 For e.g:
 q = “New York”
 API_KEY: Your Api Key
 
-Hourly Forecast: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&hours=24
-q = “New York”
-API_KEY: Your Api Key
+- **Hourly Forecast**: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&hours=24
+  q = “New York”
+  API_KEY: Your Api Key
 
-Weekly Forecast: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&days=7
-q = “New York”
-API_KEY: Your Api Key
+- **Weekly Forecast**: https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=QUERY&days=7
+  q = “New York”
+  API_KEY: Your Api Key
 
-Functions:
+## Functions:
 
-fetchWeatherData(lat, lon): Fetches current, hourly, and weekly weather data based on latitude and longitude.
-fetchWeatherDataByQuery(query): Fetches weather data based on a location query.
-fetchWeatherDataByLocation(): Fetches weather data based on the user's current location.
+- **fetchWeatherData(lat, lon)**: Fetches current, hourly, and weekly weather data based on latitude and longitude.
 
-Customization
-Styles: Modify Tailwind CSS classes to fit your design preferences.
-API Key: Ensure to replace your_weather_api_key in the .env file with your actual API key from WeatherAPI.
+- **fetchWeatherDataByQuery(query)**: Fetches weather data based on a location query.
 
-Screenshots:
-Weather details based on User's Location when the weathereffect = "Partly Cloudy"
-![Screenshot 2024-08-15 at 15 12 52](https://github.com/user-attachments/assets/9cf50906-f9b8-46e5-b8e2-65e036511e7c)
+- **fetchWeatherDataByLocation()**: Fetches weather data based on the user's current location.
 
-Weather details based on User's preferred City when the weathereffect = "Sunny"
-![Screenshot 2024-08-14 at 22 41 02](https://github.com/user-attachments/assets/79e9de81-1b06-45ca-b66e-77dd3ebf5e74)
+## Customization
 
-Weather details based on User's preferred City when the weathereffect = "Rainy"
-![Screenshot 2024-08-15 at 15 32 34](https://github.com/user-attachments/assets/7f28476f-43eb-4093-9d6d-76d805750a67)
+- **Styles**: Modify Tailwind CSS classes to fit your design preferences.
+- **API Key**: Ensure to replace your_weather_api_key in the .env file with your actual API key from WeatherAPI.
 
-Hourly Forecast:
-![Screenshot 2024-08-15 at 15 29 17](https://github.com/user-attachments/assets/6d4f4e4c-85eb-416c-af2f-03a89ca03b00)
+## Screenshots:
 
-Weekly Forecast:
-![Screenshot 2024-08-15 at 15 30 16](https://github.com/user-attachments/assets/666c3529-42ef-4a57-ac31-35b394bc87b4)
+- **Weather details based on User's Location when the weathereffect = "Partly Cloudy"**
 
-Temperature Conversion From Celsius to Fahrenheit
-![Screenshot 2024-08-15 at 15 35 55](https://github.com/user-attachments/assets/56b0a777-e3e3-4ff2-8467-5d1e4724b3f7)
+![Screenshot of partly cloudy](assets/images/partlycloudy.png)
 
-### weathereffect:
+- **Weather details based on User's preferred City when the weathereffect = "Sunny"**
 
-Provides visual effects based on current weather conditions.
+![Screenshot of sunny](assets/images/sunny.png)
+
+- **Weather details based on User's preferred City when the weathereffect = "Rainy"**
+
+![Screenshot of rainy cloudy](assets/images/rainy.png)
+
+- **Hourly Forecast**:
+
+![Screenshot of hourly](assets/images/hourlyforecast.png)
+
+- **Weekly Forecast**:
+
+![Screenshot of weekly](assets/images/weeklyforecast.png)
+
+- **Temperature Conversion From Celsius to Fahrenheit**
+
+![Screenshot of weekly](assets/images/ctof.png)
