@@ -9,10 +9,11 @@ function SearchBar({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
-      onSearch({ query });
+    const trimmedQuery = query.trim();
+    if (trimmedQuery) {
+      onSearch({ query: trimmedQuery });
     } else {
-      console.error("Search query is empty");
+      console.warn("Search query is empty");
     }
   };
 

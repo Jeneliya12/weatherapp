@@ -1,22 +1,20 @@
+const effectClasses = {
+  rain: "rainy-effect",
+  thunderstorm: "thunderstorm-effect",
+  storm: "thunderstorm-effect",
+  sunny: "sunny-effect",
+  clear: "sunny-effect",
+  cloud: "cloudy-effect",
+};
+
 function WeatherEffect({ condition }) {
+  const normalizedCondition = condition?.toLowerCase().trim();
+
   const getEffectClass = () => {
-    if (condition?.toLowerCase().includes("rain")) {
-      return "rainy-effect";
-    }
-    if (
-      condition?.toLowerCase().includes("thunderstorm") ||
-      condition?.toLowerCase().includes("storm")
-    ) {
-      return "thunderstorm-effect";
-    }
-    if (
-      condition?.toLowerCase().includes("sunny") ||
-      condition?.toLowerCase().includes("clear")
-    ) {
-      return "sunny-effect";
-    }
-    if (condition?.toLowerCase().includes("cloud")) {
-      return "cloudy-effect";
+    for (const [key, value] of Object.entries(effectClasses)) {
+      if (normalizedCondition.includes(key)) {
+        return value;
+      }
     }
     return "";
   };

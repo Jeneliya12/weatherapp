@@ -9,7 +9,11 @@ function CurrentWeather({ data }) {
         {data.location}
       </h2>
       <div className="flex flex-col items-center text-center mb-6">
-        <img src={iconUrl} className="w-24 h-24 mb-3" alt={data.condition} />
+        <img
+          src={iconUrl}
+          alt={`Weather icon showing ${data.condition}`}
+          className="w-24 h-24 mb-3"
+        />
         <h1 className="text-6xl font-bold text-gray-800 mb-1">
           {data.temperature}°C
         </h1>

@@ -10,13 +10,15 @@ const HourlyForecast = ({ data }) => {
 
           return (
             <div key={index} className="flex-none w-24 text-center">
-              <p className="text-sm font-medium text-gray-800">{hour.time}</p>
+              <p className="text-sm font-medium text-gray-800 mb-1">
+                {hour.time}
+              </p>
               <img
                 src={iconUrl}
-                alt={hour.condition}
-                className="w-12 h-12 mx-auto"
+                alt={`Weather icon for ${hour.condition}`}
+                className="w-12 h-12 mx-auto mb-1"
               />
-              <p className="text-lg font-bold text-gray-800">
+              <p className="text-lg font-bold text-gray-800 mb-1">
                 {hour.temperature}°C
               </p>
               <p className="text-sm text-gray-600">{hour.condition}</p>

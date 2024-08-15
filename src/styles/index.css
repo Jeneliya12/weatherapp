@@ -1,10 +1,12 @@
+/* Importing custom styles */
 @import "./weathereffect.css";
 
+/* Tailwind CSS Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*Global Styles */
+/* Global Styles */
 body {
   @apply font-sans;
 }
