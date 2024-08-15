@@ -2,7 +2,7 @@ import React from "react";
 
 const HourlyForecast = ({ data }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 mt-4 relative z-30">
+    <div className="bg-blue-50 shadow-lg rounded-lg p-6 mt-4 relative z-30">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">Hourly Forecast</h3>
       <div className="flex overflow-x-auto space-x-4 pb-2">
         {data.map((hour, index) => {

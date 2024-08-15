@@ -39,26 +39,31 @@ function Mainsection() {
     const weeklyUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=7`;
 
     try {
-      const currentResponse = await fetch(currentUrl);
+      const [currentResponse, hourlyResponse, weeklyResponse] =
+        await Promise.all([
+          fetch(currentUrl),
+          fetch(hourlyUrl),
+          fetch(weeklyUrl),
+        ]);
+
       if (!currentResponse.ok)
         throw new Error(
           `Error fetching current weather: ${currentResponse.statusText}`
         );
-      const currentData = await currentResponse.json();
-
-      const hourlyResponse = await fetch(hourlyUrl);
       if (!hourlyResponse.ok)
         throw new Error(
           `Error fetching hourly forecast: ${hourlyResponse.statusText}`
         );
-      const hourlyData = await hourlyResponse.json();
-
-      const weeklyResponse = await fetch(weeklyUrl);
       if (!weeklyResponse.ok)
         throw new Error(
           `Error fetching weekly forecast: ${weeklyResponse.statusText}`
         );
-      const weeklyData = await weeklyResponse.json();
+
+      const [currentData, hourlyData, weeklyData] = await Promise.all([
+        currentResponse.json(),
+        hourlyResponse.json(),
+        weeklyResponse.json(),
+      ]);
 
       return { current: currentData, hourly: hourlyData, weekly: weeklyData };
     } catch (error) {
@@ -94,9 +99,11 @@ function Mainsection() {
           `Error fetching weekly forecast: ${weeklyResponse.statusText}`
         );
 
-      const currentData = await currentResponse.json();
-      const hourlyData = await hourlyResponse.json();
-      const weeklyData = await weeklyResponse.json();
+      const [currentData, hourlyData, weeklyData] = await Promise.all([
+        currentResponse.json(),
+        hourlyResponse.json(),
+        weeklyResponse.json(),
+      ]);
 
       return { current: currentData, hourly: hourlyData, weekly: weeklyData };
     } catch (error) {
@@ -170,14 +177,20 @@ function Mainsection() {
 
   return (
     <main className="bg-blue-50 py-8 min-h-screen flex flex-col items-center relative overflow-hidden">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      {loading && <p className="text-lg text-gray-600">Loading...</p>}
+      {error && <p className="text-lg text-red-600">Error: {error}</p>}
       {weatherData && <WeatherEffect condition={weatherData.condition} />}
-      <div className="relative w-full max-w-4xl px-4">
+      <div className="relative w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <SearchBar onSearch={handleSearch} />
-        {weatherData && <CurrentWeather data={weatherData} />}
-        {hourlyData.length > 0 && <HourlyForecast data={hourlyData} />}
-        {weeklyData.length > 0 && <WeeklyForecast data={weeklyData} />}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+          <div className="lg:col-span-1">
+            {weatherData && <CurrentWeather data={weatherData} />}
+          </div>
+          <div className="lg:col-span-2 flex flex-col space-y-6">
+            {hourlyData.length > 0 && <HourlyForecast data={hourlyData} />}
+            {weeklyData.length > 0 && <WeeklyForecast data={weeklyData} />}
+          </div>
+        </div>
       </div>
     </main>
   );
