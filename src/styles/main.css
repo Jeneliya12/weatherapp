@@ -1,0 +1,51 @@
+/* Global or component-specific CSS */
+
+/* Sunny Effect */
+.sunny-effect {
+  background: linear-gradient(to top, #3b45a380 0%, #8181 100%);
+  background-size: cover;
+  animation: sun-shine 5s infinite;
+}
+
+/* Rainy Effect */
+.rainy-effect {
+  background: linear-gradient(to bottom, #a0c4ff 0%, #0e4b70 100%);
+  background-size: cover;
+  position: relative;
+}
+
+.rainy-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.5) 4px,
+    rgba(255, 255, 255, 0.5) 5px
+  );
+  opacity: 0.5;
+  animation: rain-fall 1s linear infinite;
+}
+
+@keyframes sun-shine {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes rain-fall {
+  to {
+    transform: translateY(100%);
+  }
+}
